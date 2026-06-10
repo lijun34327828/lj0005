@@ -7,7 +7,7 @@
     "maxChunkSize": 2000,
     "minSentenceLength": 5,
     "streamDelayMs": 100,
-    "engines": ["mock-primary", "mock-secondary", "mock-fallback"],
+    "engines": ["google", "libretranslate", "mymemory", "dictionary"],
     "engineTimeoutMs": 5000
   },
   "sensitiveWords": {
