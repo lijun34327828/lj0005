@@ -1,0 +1,52 @@
+{
+  "port": 8635,
+  "host": "0.0.0.0",
+  "translation": {
+    "defaultSourceLang": "auto",
+    "defaultTargetLang": "zh",
+    "maxChunkSize": 2000,
+    "minSentenceLength": 5,
+    "streamDelayMs": 100,
+    "engines": ["mock-primary", "mock-secondary", "mock-fallback"],
+    "engineTimeoutMs": 5000
+  },
+  "sensitiveWords": {
+    "enabled": true,
+    "levels": {
+      "warn": {
+        "action": "warn",
+        "words": ["敏感词示例1", "敏感词示例2"]
+      },
+      "mask": {
+        "action": "mask",
+        "maskChar": "*",
+        "words": ["违禁词1", "违禁词2"]
+      },
+      "block": {
+        "action": "block",
+        "words": ["严重违禁词"]
+      }
+    }
+  },
+  "rateLimit": {
+    "enabled": true,
+    "windowMs": 60000,
+    "maxRequests": 30,
+    "message": "请求过于频繁，请稍后再试"
+  },
+  "cache": {
+    "enabled": true,
+    "ttlMs": 3600000,
+    "maxSize": 500
+  },
+  "history": {
+    "enabled": true,
+    "pageSize": 20,
+    "maxStored": 500
+  },
+  "log": {
+    "level": "info",
+    "maxFiles": 10,
+    "maxSizeMb": 10
+  }
+}
